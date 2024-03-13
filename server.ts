@@ -8,7 +8,9 @@ app.use(cors({
     origin: [
         'http://localhost',
         'http://localhost:3000',
-        'https://weatherapp-production-ae78.up.railway.app'],
+        'https://weatherapp-production-ae78.up.railway.app',
+        '*'
+    ],
     credentials: true,
     methods: ['HEAD','OPTIONS','GET','POST','DELETE','UPDATE','PUT','PATCH']
   }))
