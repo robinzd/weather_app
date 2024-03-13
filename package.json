@@ -4,26 +4,9 @@
   "description": "",
   "main": "server.ts`",
   "scripts": {
-    
-      "start": "ts-node server.ts",
-      "dev": "nodemon server.ts",
-      "reset_assests": "mkdir -p ./build/www/assets && rsync -rc --delete ./www/assets/ ./build/www/assets",
-      "reset_prisma": "mkdir -p ./build/www/prisma && rsync -rc --delete ./www/prisma/ ./build/www/prisma",
-      "copy_package_files": "cp -fr ./package.json ./build/package.json && cp -fr ./package-lock.json ./build/package-lock.json",
-      "copy_env": "cp -fr ./.env ./build/.env",
-      "copy_ecosystem": "cp -fr ./build_dependencies/ecosystem.config.js ./build/ecosystem.config.js",
-      "prisma_ts_build": "mkdir -p ./.prisma/backups/ && cp ./www/prisma/schema.prisma ./.prisma/backups/schema-$(date +\"%Y%m%d%H%M%S\").prisma && cd ./www && npx prisma db pull && npx prisma generate && cd ..",
-      "prisma_js_build": "cd ./build/www && npx prisma db pull && npx prisma generate && cd ../..",
-      "remove_pre_builds": "cd ./build/www &&  find . -name '*.js' -type f -delete && cd ../..",
-      "tscompile": "npx tsc --build",
-      "build": "npm run copy_package_files && npm run copy_env && npm run copy_ecosystem && npm run reset_assests && npm run reset_prisma && npm run prisma_ts_build && npm run remove_pre_builds && npm run tscompile && npm run prisma_js_build",
-      "npm_ts_update": "npm install",
-      "npm_js_update": "cd ./build && npm install --omit=dev && cd ..",
-      "prisma_ts_latest": "mkdir -p ./.prisma/backups/ && cp -r ./.prisma/client ./.prisma/backups/client-$(date +\"%Y%m%d%H%M%S\") &&npm install prisma@latest @prisma/client@latest",
-      "prisma_js_latest": "cd ./build && npm install prisma@latest @prisma/client@latest && cd ..",
-      "full_build": "npm run npm_ts_update && npm run npm_js_update && npm run prisma_ts_latest && npm run prisma_js_latest && npm run build",
-      "winbuild": "(if exist build\\www (del /f /s /q build\\www)) && tsc && (if not exist build\\www\\prisma (mkdir build\\www\\prisma)) && (copy www\\prisma\\schema.prisma build\\www\\prisma) && (copy package.json build\\package.json) && (copy package-lock.json build\\package-lock.json) && (copy .env build\\.env) && (copy build_dependencies\\ecosystem.config.js build\\ecosystem.config.js)"
-    
+    "start": "ts-node server.ts",
+    "dev": "nodemon server.ts",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
