@@ -5,7 +5,8 @@
   "main": "server.ts`",
   "scripts": {
     "start": "ts-node server.ts",
-    "dev": "nodemon server.ts"
+    "dev": "nodemon server.ts",
+    "build": "npm run copy_package_files && npm run copy_env && npm run copy_ecosystem && npm run reset_assests && npm run reset_prisma && npm run prisma_ts_build && npm run remove_pre_builds && npm run tscompile && npm run prisma_js_build"
   },
   "keywords": [],
   "author": "",
