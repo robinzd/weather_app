@@ -14,7 +14,7 @@ app.use((0, cors_1.default)({
         'http://localhost',
         'http://localhost:3000',
         'https://weatherapp-production-ae78.up.railway.app',
-        'https://15acde28.weather-app-1uw.pages.dev'
+        '*'
     ],
     credentials: true,
     methods: ['HEAD', 'OPTIONS', 'GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH']
