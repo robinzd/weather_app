@@ -780,7 +780,7 @@ export const WeatherApp=async (req: any, res: any) => {
       let status = 200
       let message = "Combined Array"
       const combinedArray = HourlyData.time.map((time, index) => ({
-        time,
+        Time:time,
         Temperature: HourlyData.temperature_2m[index],
         RelativeHumidity: HourlyData.relative_humidity_2m[index],
         WindSpeed: HourlyData.wind_speed_10m[index],
